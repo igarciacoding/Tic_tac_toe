@@ -10,8 +10,13 @@
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
+    flex-direction: column;
   }
-  
+  .controls{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Create 3 columns */

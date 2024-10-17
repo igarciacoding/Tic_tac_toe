@@ -7,26 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="changeColor()">Change dimension</button>
+  <div class="controls">
     <select name="numbers" id="numbers">
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-      </select>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+    </select>
+    <button onclick="changeColor()">Change dimension</button>
+  </div>
     <div class="grid-container" id="grid">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
-        
-      </div>
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">7</div>
+      <div class="grid-item">8</div>
+      <div class="grid-item">9</div>
+    </div>
 </body>
 <script>
     
@@ -36,7 +38,6 @@
         const dim = document.getElementById('numbers').value;
         box.innerHTML = '';
   
-    
       for (let i = 0; i < (dim*dim); i++) {
         const newDiv = document.createElement('div');
         newDiv.classList.add('grid-item');
