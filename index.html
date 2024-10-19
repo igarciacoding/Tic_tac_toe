@@ -16,32 +16,37 @@
       <option value="7">7</option>
       <option value="8">8</option>
     </select>
-    <button onclick="changeColor()">Change dimension</button>
+    <button onclick="generate_grid()">Change dimension</button>
     <button onclick="combinations()">Show combinations</button>
   </div>
     <div class="grid-container" id="grid">
-      <div class="grid-item">1</div>
-      <div class="grid-item">2</div>
-      <div class="grid-item">3</div>
-      <div class="grid-item">4</div>
-      <div class="grid-item">5</div>
-      <div class="grid-item">6</div>
-      <div class="grid-item">7</div>
-      <div class="grid-item">8</div>
-      <div class="grid-item">9</div>
+      <button data-row="0" data-col="0" class="grid-item" onclick="getCellValue(event)"></button>
+      <button data-row="0" data-col="1" class="grid-item" onclick="getCellValue(event)"></button>
+      <button data-row="0" data-col="2" class="grid-item" onclick="getCellValue(event)"></button>
+      <button data-row="1" data-col="0" class="grid-item" onclick="getCellValue(event)"></button>
+      <button data-row="1" data-col="1" class="grid-item" onclick="getCellValue(event)"></button>
+      <button data-row="1" data-col="2" class="grid-item" onclick="getCellValue(event)"></button>
+      <button data-row="2" data-col="0" class="grid-item" onclick="getCellValue(event)"></button>
+      <button data-row="2" data-col="1" class="grid-item" onclick="getCellValue(event)"></button>
+      <button data-row="2" data-col="2" class="grid-item" onclick="getCellValue(event)"></button>
     </div>
 </body>
 <script>
-    function changeColor() {
+    function generate_grid() {
         const box = document.getElementById('grid');
         const dim = document.getElementById('numbers').value;
       //-----------------------------------------------------------
       box.innerHTML = '';
-      for (let i = 0; i < (dim*dim); i++) {
-        const newDiv = document.createElement('div');
-        newDiv.classList.add('grid-item');
-        newDiv.textContent = box.children.length + 1;
-        box.appendChild(newDiv);
+      for (let x = 0; x < dim; x++) {
+        for (let y = 0; y < dim; y++) {
+          const newDiv = document.createElement('button');
+                newDiv.setAttribute('data-col',y);
+                newDiv.setAttribute('data-row',x);
+                newDiv.setAttribute('onclick', 'getCellValue(event)');
+                newDiv.classList.add('grid-item');
+                //newDiv.textContent = box.children.length + 1;
+          box.appendChild(newDiv);
+        }
       }
       box.style.gridTemplateColumns = 'repeat('+dim+', 1fr)'
       box.style.gridTemplateRows = 'repeat('+dim+', 1fr)'
@@ -49,6 +54,23 @@
       box.style.height = dim+'00px';
       //-----------------------------------------------------------
     }
+
+    function getCellValue(event) {
+      event.target.value="X"
+      
+
+
+
+            let cellValue = event.target.value; // Get the value of the clicked button
+           alert("You clicked cell with value: " + cellValue);
+
+            let row = event.target.getAttribute("data-row"); // Get the row
+            let col = event.target.getAttribute("data-col"); // Get the column
+            alert("Row: " + row + ", Column: " + col);
+            event.target.disabled = true;
+        }
+
+
     function combinations(){
       let dime = document.getElementById('numbers').value;
       const size = Number(dime);
