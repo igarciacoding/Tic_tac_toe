@@ -16,22 +16,24 @@
     display: flex;
     justify-content: center;
     width: 300px;
+    padding: 2px;
   }
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
-    grid-template-rows: repeat(3, 1fr);    /* Create 3 rows */
-    gap: 1px;                             /* Space between grid items */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1px;
     width: 300px;
     height: 300px;
   }
   
   .grid-item {
+    border:0;
     background-color: #3498db;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 80px;
     color: white;
     font-family: Arial, sans-serif;
     border-radius: 4px;
