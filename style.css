@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #DCDCDC;
     flex-direction: column;
   }
   .controls{
@@ -28,7 +28,7 @@
   }
   
   .grid-item {
-    border:0;
+    border: 0;
     background-color: #3498db;
     display: flex;
     justify-content: center;
